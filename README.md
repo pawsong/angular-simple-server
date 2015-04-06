@@ -24,21 +24,21 @@
 
 ## Configurable environment variables
 
-#### PRERENDER_SERVICE_URL
+#### NG_PRERENDER_SERVICE_URL
   
   Default: undefined
 
   - Prerender server URL for SEO support. If omitted, SEO support will be disabled
   - Prerender-hosted service url is `http://service.prerender.io/`
 
-#### PROXY_TARGET
+#### NG_PROXY_TARGET
 
   Default: `http://0.0.0.0:9000`
   
   - URL of a static server for AngularJS application codes
   - Can use aws s3 bucket when static website hosting feature is enabled
 
-#### PORT
+#### NG_SERVER_PORT
   
   Default: 8000
   

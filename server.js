@@ -6,9 +6,9 @@ var express = require('express'),
 
 // Configurations
 var config = {
-  prerenderServiceUrl : process.env.PRERENDER_SERVICE_URL,
-  proxyTarget : process.env.PROXY_TARGET || 'http://0.0.0.0:9000',
-  port : process.env.PORT || 8000
+  prerenderServiceUrl : process.env.NG_PRERENDER_SERVICE_URL,
+  proxyTarget : process.env.NG_PROXY_TARGET || 'http://0.0.0.0:9000',
+  port : process.env.NG_SERVER_PORT || 8000
 };
 
 console.log('starting angular-server');
