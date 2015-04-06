@@ -1,0 +1,12 @@
+{
+  "deploy" : {
+    "production" : {
+      "user" : "node",
+      "host" : "my.server.com",
+      "ref"  : "origin/master",
+      "repo" : "https://github.com/gifff/angular-simple-server.git",
+      "path" : "~/apps/angular-simple-server",
+      "post-deploy" : "npm install --production && pm2 startOrRestart processes.json --env production"
+    }
+  }
+}
