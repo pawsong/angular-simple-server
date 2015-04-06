@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Simple server that supports SEO and html5mode rewriting",
   "scripts": {
-    "lint": "jshint app.js"
+    "lint": "jshint server.js"
   },
   "author": "Song Seung Geun <giff.song@gmail.com>",
   "license": "MIT",
