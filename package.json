@@ -1,5 +1,5 @@
 {
-  "name": "angular-server",
+  "name": "angular-simple-server",
   "version": "0.1.0",
   "description": "Simple server that supports SEO and html5mode rewriting",
   "scripts": {
