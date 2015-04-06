@@ -6,9 +6,9 @@ var express = require('express'),
 
 // Configurations
 var config = {
-  prerenderServiceUrl : process.env.NG_PRERENDER_SERVICE_URL,
-  proxyTarget : process.env.NG_PROXY_TARGET || 'http://0.0.0.0:9000',
-  port : process.env.NG_SERVER_PORT || 8000
+  NG_PRERENDER_SERVICE_URL : process.env.NG_PRERENDER_SERVICE_URL,
+  NG_PROXY_TARGET : process.env.NG_PROXY_TARGET || 'http://0.0.0.0:9000',
+  NG_SERVER_PORT : process.env.NG_SERVER_PORT || 8000
 };
 
 console.log('starting angular-server');
@@ -21,22 +21,22 @@ Object.keys(config).forEach(function (key) {
 var app = express();
 
 // SEO support
-if (config.prerenderServiceUrl) {
-  prerender.set('prerenderServiceUrl', config.prerenderServiceUrl); 
+if (config.NG_PRERENDER_SERVICE_URL) {
+  prerender.set('prerenderServiceUrl', config.NG_PRERENDER_SERVICE_URL); 
   app.use(prerender);
 }
 
 // Proxy to origin cdn server
 app.use(angularProxy({
-  target: config.proxyTarget
+  target: config.NG_PROXY_TARGET
 }));
 
-app.listen(config.port, function (err) {
+app.listen(config.NG_SERVER_PORT, function (err) {
   if (err) {
     console.error(err);
     return; 
   }
   
-  console.log('server running on %d', config.port); 
+  console.log('server running on %d', config.NG_SERVER_PORT); 
 });
 
