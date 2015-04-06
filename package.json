@@ -4,8 +4,8 @@
   "description": "Simple server that supports SEO and html5mode rewriting",
   "scripts": {
     "lint": "jshint server.js",
-    "setup": "node_modules/pm2-deploy/deploy ecosystem.json production setup",
-    "deploy": "node_modules/pm2-deploy/deploy ecosystem.json production"
+    "setup": "pm2 deploy ecosystem.json production setup",
+    "deploy": "pm2 deploy ecosystem.json production"
   },
   "author": "Song Seung Geun <giff.song@gmail.com>",
   "license": "MIT",
@@ -16,6 +16,6 @@
   },
   "devDependencies": {
     "jshint": "^2.6.3",
-    "pm2-deploy": "^0.1.2"
+    "pm2": "^0.12.9"
   }
 }
