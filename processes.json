@@ -1,0 +1,9 @@
+{
+  "apps" : [{
+    "name"      : "angular-simple-server",
+    "script"    : "server.js",
+    "env_production" : {
+      "NODE_ENV": "production"
+    }
+  }]
+}
