@@ -21,6 +21,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('lint', ['jshint']);
 
+  grunt.renameTask('pm2deploy', 'deploy');
+
   // By default, lint and run all tests.
   grunt.registerTask('default', ['lint']);
 };
