@@ -20,7 +20,7 @@
 
 ## Usage
 
-### Run server
+### Minimal Usage
 
 ```shell
 $ git clone https://github.com/gifff/angular-simple-server
@@ -29,7 +29,23 @@ $ npm install
 $ PRERENDER_SERVICE_URL=http://localhost:3000 node server
 ```
 
-### Deploy
+### Advanced Usage
+
+#### Show available tasks
+
+```shell
+$ grunt
+```
+
+#### Run server
+
+```shell
+$ node server
+$ # OR
+$ grunt serve # run by nodemon
+```
+
+#### Deploy
 
 ```shell
 $ cp ecosystem.json.sample ecosystem.json
