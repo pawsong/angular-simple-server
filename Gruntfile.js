@@ -6,6 +6,14 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    availabletasks: {
+      tasks: {
+        options: {
+          filter: 'include',
+          tasks: ['default', 'lint', 'deploy']
+        }
+      }
+    },
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -19,10 +27,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('lint', ['jshint']);
-
+  grunt.renameTask('jshint', 'lint');
   grunt.renameTask('pm2deploy', 'deploy');
-
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['lint']);
+  grunt.registerTask('default', grunt.task._tasks.availabletasks.info, ['availabletasks']);
 };
