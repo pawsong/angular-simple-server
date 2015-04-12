@@ -4,4 +4,4 @@ node_js:
   - "iojs"
 
 script:
-  - "grunt"
+  - "grunt lint"
