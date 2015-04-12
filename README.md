@@ -34,7 +34,7 @@ $ PRERENDER_SERVICE_URL=http://localhost:3000 node server
 ```shell
 $ cp ecosystem.json.sample ecosystem.json
 $ vim ecosystem.json
-$ grunt deploy
+$ grunt deploy:production
 ```
 
 ## Configurable environment variables
