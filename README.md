@@ -14,13 +14,28 @@
   * SEO support
     - Using [Prerender](https://prerender.io)
     - Refer to [Google documentation](https://developers.google.com/webmasters/ajax-crawling/docs/specification)
+  * Deployment
+    - Using [pm2 deployment system](https://github.com/Unitech/PM2/blob/master/ADVANCED_README.md#deployment)
+    - Automated as a grunt task `grunt deploy`
 
 ## Usage
 
-	$ git clone https://github.com/gifff/angular-simple-server
-	$ cd angular-simple-server
-	$ npm install
-	$ PRERENDER_SERVICE_URL=http://localhost:3000 node server
+### Run server
+
+```shell
+$ git clone https://github.com/gifff/angular-simple-server
+$ cd angular-simple-server
+$ npm install
+$ PRERENDER_SERVICE_URL=http://localhost:3000 node server
+```
+
+### Deploy
+
+```shell
+$ cp ecosystem.json.sample ecosystem.json
+$ vim ecosystem.json
+$ grunt deploy
+```
 
 ## Configurable environment variables
 
