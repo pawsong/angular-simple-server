@@ -10,10 +10,17 @@ module.exports = function(grunt) {
       tasks: {
         options: {
           filter: 'include',
-          tasks: ['default', 'lint', 'deploy']
+          tasks: [
+            'default',
+            'lint',
+            'test',
+            'serve',
+            'deploy'
+          ]
         }
       }
     },
+
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -25,13 +32,26 @@ module.exports = function(grunt) {
       ]
     },
 
+    mochaTest: {
+      all: ['test/*.test.js']
+    },
+
+    nodemon: {
+      dev: {
+        script: 'server.js'
+      }
+    }
   });
+
+  function aliasTask(oldTask, newTask) {
+    grunt.registerTask(newTask, grunt.task._tasks[oldTask].info, [oldTask]);
+  }
 
   grunt.renameTask('pm2deploy', 'deploy');
 
-  grunt.registerTask('lint',
-                     grunt.task._tasks.jshint.info, ['jshint']);
+  aliasTask('jshint', 'lint');
+  aliasTask('mochaTest', 'test');
+  aliasTask('nodemon', 'serve');
+  aliasTask('availabletasks', 'default');
 
-  grunt.registerTask('default',
-                     grunt.task._tasks.availabletasks.info, ['availabletasks']);
 };
