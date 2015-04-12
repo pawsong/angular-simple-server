@@ -53,7 +53,7 @@ $ vim ecosystem.json
 $ grunt deploy:production
 ```
 
-## Configurable environment variables
+## Configurable Environment Variables
 
 #### NG_PRERENDER_SERVICE_URL
   
