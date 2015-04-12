@@ -27,7 +27,11 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.renameTask('jshint', 'lint');
   grunt.renameTask('pm2deploy', 'deploy');
-  grunt.registerTask('default', grunt.task._tasks.availabletasks.info, ['availabletasks']);
+
+  grunt.registerTask('lint',
+                     grunt.task._tasks.jshint.info, ['jshint']);
+
+  grunt.registerTask('default',
+                     grunt.task._tasks.availabletasks.info, ['availabletasks']);
 };
