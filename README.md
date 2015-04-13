@@ -56,7 +56,7 @@ $ grunt deploy:production
 ## Configurable Environment Variables
 
 #### NG_PRERENDER_SERVICE_URL
-  
+
   Default: undefined
 
   - Prerender server URL for SEO support. If omitted, SEO support will be disabled
@@ -65,14 +65,14 @@ $ grunt deploy:production
 #### NG_PROXY_TARGET
 
   Default: `http://0.0.0.0:9000`
-  
+
   - URL of a static server for AngularJS application codes
   - Can use aws s3 bucket when static website hosting feature is enabled
 
 #### NG_SERVER_PORT
-  
+
   Default: 8000
-  
+
   - Port of angular-simple-server
 
 ## License
