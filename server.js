@@ -15,14 +15,14 @@ console.log('starting angular-server');
 
 console.log('configurations:');
 Object.keys(config).forEach(function (key) {
-  console.log('  %s: %s', key, config[key] || 'N/A');  
+  console.log('  %s: %s', key, config[key] || 'N/A');
 });
 
 var app = express();
 
 // SEO support
 if (config.NG_PRERENDER_SERVICE_URL) {
-  prerender.set('prerenderServiceUrl', config.NG_PRERENDER_SERVICE_URL); 
+  prerender.set('prerenderServiceUrl', config.NG_PRERENDER_SERVICE_URL);
   app.use(prerender);
 }
 
@@ -34,9 +34,9 @@ app.use(angularProxy({
 app.listen(config.NG_SERVER_PORT, function (err) {
   if (err) {
     console.error(err);
-    return; 
+    return;
   }
-  
-  console.log('server running on %d', config.NG_SERVER_PORT); 
+
+  console.log('server running on %d', config.NG_SERVER_PORT);
 });
 
