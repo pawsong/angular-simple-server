@@ -1,3 +1,4 @@
 node_modules
 *.swp
 ecosystem.json
+config.js
