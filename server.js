@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require('fs'),
-    path = require('path'),
+var path = require('path'),
     express = require('express'),
     prerender = require('prerender-node'),
     angularProxy = require('angular-html5-proxy');

@@ -2,5 +2,8 @@
 
 module.exports = function (app) {
 
+  /*jshint unused:false*/
+
   // Implement extension!
+
 };
