@@ -55,7 +55,7 @@ catch(e) {
   process.exit(1);
 }
 
-extension(app);
+extension(app, config);
 
 // SEO support
 if (config.NG_PRERENDER_SERVICE_URL) {
