@@ -13,6 +13,7 @@
   "dependencies": {
     "angular-html5-proxy": "^0.1.1",
     "express": "^4.12.3",
+    "extend": "^2.0.0",
     "prerender-node": "^1.2.1"
   },
   "devDependencies": {

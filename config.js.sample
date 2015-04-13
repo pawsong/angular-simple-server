@@ -1,0 +1,19 @@
+'use strict';
+
+module.exports = {
+  development: {
+    NG_PRERENDER_SERVICE_URL: 'http://service.prerender.io/',
+    NG_PROXY_TARGET: 'http://0.0.0.0:9000',
+    NG_SERVER_PORT: 8000,
+  },
+  staging: {
+    NG_PRERENDER_SERVICE_URL: 'http://service.prerender.io/',
+    NG_PROXY_TARGET: 'http://stage.server.com',
+    NG_SERVER_PORT: 8000,
+  },
+  production: {
+    NG_PRERENDER_SERVICE_URL: 'http://service.prerender.io/',
+    NG_PROXY_TARGET: 'http://prod.server.com',
+    NG_SERVER_PORT: 8000,
+  }
+};

@@ -1,16 +1,26 @@
 'use strict';
 
-var path = require('path'),
+var fs = require('fs'),
+    path = require('path'),
     express = require('express'),
+    extend = require('extend'),
     prerender = require('prerender-node'),
     angularProxy = require('angular-html5-proxy');
 
 // Configurations
-var config = {
-  NG_PRERENDER_SERVICE_URL : process.env.NG_PRERENDER_SERVICE_URL,
+
+var env = process.env.NODE_ENV,
+    localConfig = {};
+
+if (fs.existsSync(__dirname + '/config.js')) {
+  localConfig = require('./config')[env] || {};
+}
+
+var config = extend(true, localConfig, {
+  NG_PRERENDER_SERVICE_URL : process.env.NG_PRERENDER_SERVICE_URL || '',
   NG_PROXY_TARGET : process.env.NG_PROXY_TARGET || 'http://0.0.0.0:9000',
   NG_SERVER_PORT : process.env.NG_SERVER_PORT || 8000
-};
+});
 
 console.log('Starting angular-simple-server');
 
