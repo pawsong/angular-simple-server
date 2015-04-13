@@ -1,6 +1,8 @@
 'use strict';
 
-var express = require('express'),
+var fs = require('fs'),
+    path = require('path'),
+    express = require('express'),
     prerender = require('prerender-node'),
     angularProxy = require('angular-html5-proxy');
 
@@ -11,14 +13,29 @@ var config = {
   NG_SERVER_PORT : process.env.NG_SERVER_PORT || 8000
 };
 
-console.log('starting angular-server');
+console.log('Starting angular-simple-server');
 
-console.log('configurations:');
+console.log('Configurations:');
 Object.keys(config).forEach(function (key) {
   console.log('  %s: %s', key, config[key] || 'N/A');
 });
 
 var app = express();
+
+var extensionFile = 'extension.js',
+    extensionPath = path.resolve(__dirname, extensionFile),
+    extension;
+
+try {
+  extension = require(extensionPath);
+}
+catch(e) {
+  console.error(e.stack);
+  console.error('Load extension failed. Cannot require \'%s\'', extensionFile);
+  process.exit(1);
+}
+
+extension(app);
 
 // SEO support
 if (config.NG_PRERENDER_SERVICE_URL) {
@@ -37,6 +54,6 @@ app.listen(config.NG_SERVER_PORT, function (err) {
     return;
   }
 
-  console.log('server running on %d', config.NG_SERVER_PORT);
+  console.log('Server running on %d', config.NG_SERVER_PORT);
 });
 
