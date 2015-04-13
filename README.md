@@ -57,11 +57,18 @@ $ grunt deploy:production
 
   Implement more features in `extension.js` file
 
-## Configurable Environment Variables
+## Configurations
+
+Configurations can be set with
+  
+- Local file `config.js` (NODE_ENV value will be used as env)
+- Environment variables.
+
+Local file is used over env variables.
 
 #### NG_PRERENDER_SERVICE_URL
 
-  Default: undefined
+  Default: ''
 
   - Prerender server URL for SEO support. If omitted, SEO support will be disabled
   - Prerender-hosted service url is `http://service.prerender.io/`
